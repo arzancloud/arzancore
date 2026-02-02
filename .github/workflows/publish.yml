@@ -22,7 +22,7 @@ jobs:
           node-version: '20'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@arzan'
-      - run: pnpm install
+      - run: pnpm install --no-frozen-lockfile
       - run: pnpm -r build
       - run: pnpm -r publish --no-git-checks --access public
         env:
