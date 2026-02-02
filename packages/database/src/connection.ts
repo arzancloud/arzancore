@@ -19,7 +19,7 @@ export function createDatabase(connectionString: string, options?: {
   if (useNeon) {
     // Neon Serverless (для edge functions)
     const sql = neon(connectionString);
-    return drizzleNeon(sql, { schema });
+    return drizzleNeon({ client: sql, schema });
   }
 
   // Стандартный PostgreSQL
