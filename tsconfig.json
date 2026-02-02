@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "declaration": true,
+    "declarationMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@arzan/ui": ["packages/ui/src"],
+      "@arzan/ui/*": ["packages/ui/src/*"],
+      "@arzan/auth": ["packages/auth/src"],
+      "@arzan/auth/*": ["packages/auth/src/*"],
+      "@arzan/billing": ["packages/billing/src"],
+      "@arzan/billing/*": ["packages/billing/src/*"],
+      "@arzan/database": ["packages/database/src"],
+      "@arzan/database/*": ["packages/database/src/*"],
+      "@arzan/modules": ["packages/modules/src"],
+      "@arzan/modules/*": ["packages/modules/src/*"],
+      "@arzan/events": ["packages/events/src"],
+      "@arzan/events/*": ["packages/events/src/*"],
+      "@arzan/i18n": ["packages/i18n/src"],
+      "@arzan/i18n/*": ["packages/i18n/src/*"],
+      "@arzan/utils": ["packages/utils/src"],
+      "@arzan/utils/*": ["packages/utils/src/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist", "build"]
+}
