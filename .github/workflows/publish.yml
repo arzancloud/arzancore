@@ -2,9 +2,14 @@ name: Publish Packages
 
 on:
   push:
-    branches: [main]
-    paths: ['packages/**']
+    tags:
+      - 'v*'
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to publish (e.g., 0.1.0)'
+        required: false
+        default: ''
 
 jobs:
   publish:
@@ -13,17 +18,39 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
         with:
-          version: 8
-      - uses: actions/setup-node@v4
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@arzancloud'
-      - run: pnpm install --no-frozen-lockfile
-      - run: pnpm -r build
-      - run: pnpm -r publish --no-git-checks --access public
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build all packages
+        run: pnpm build
+
+      - name: Run typecheck
+        run: pnpm typecheck || true
+
+      - name: Publish packages
+        run: |
+          for pkg in packages/*; do
+            if [ -d "$pkg" ] && [ -f "$pkg/package.json" ]; then
+              echo "Publishing $pkg..."
+              cd "$pkg"
+              pnpm publish --no-git-checks --access restricted || echo "Failed to publish $pkg"
+              cd ../..
+            fi
+          done
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -35,3 +35,17 @@ export {
   generateTotpUri,
   generateBackupCodes,
 } from './security';
+
+// Module auth middleware
+export {
+  checkAccess,
+  createHonoAuthMiddleware,
+  createExpressAuthMiddleware,
+  hasPermission,
+  checkLimit,
+  requirePermission,
+  requireLimit,
+  type ModuleAuthConfig,
+  type AuthContext,
+  type AccessCheckResponse,
+} from './middleware';

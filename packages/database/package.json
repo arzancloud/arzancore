@@ -3,26 +3,37 @@
   "version": "0.1.0",
   "private": false,
   "description": "Arzan Platform - Database Schema & Utilities",
+  "license": "MIT",
+  "author": "Arzan Cloud <dev@arzan.cloud>",
+  "keywords": ["arzan", "database", "drizzle", "postgresql", "schema"],
   "repository": {
     "type": "git",
-    "url": "https://github.com/arzancloud/arzancore.git"
+    "url": "https://github.com/arzancloud/arzancore.git",
+    "directory": "packages/database"
+  },
+  "homepage": "https://github.com/arzancloud/arzancore#readme",
+  "bugs": {
+    "url": "https://github.com/arzancloud/arzancore/issues"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
   },
+  "sideEffects": false,
+  "files": ["dist", "README.md"],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.js"
     },
     "./schema": {
+      "types": "./dist/schema/index.d.ts",
       "import": "./dist/schema/index.mjs",
-      "require": "./dist/schema/index.js",
-      "types": "./dist/schema/index.d.ts"
+      "require": "./dist/schema/index.js"
     }
   },
   "scripts": {

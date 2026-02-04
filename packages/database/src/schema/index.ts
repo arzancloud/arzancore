@@ -60,3 +60,71 @@ export {
   type UsageRecord,
   type PromoCode,
 } from './billing';
+
+// Company Structure
+export {
+  departments,
+  employees,
+  roles,
+  userRoles,
+  userPermissions,
+  type Department,
+  type NewDepartment,
+  type Employee,
+  type NewEmployee,
+  type Role,
+  type NewRole,
+  type UserRole,
+  type NewUserRole,
+  type UserPermission,
+  type NewUserPermission,
+} from './company';
+
+// HR (Salary, KPI, Schedules)
+export {
+  salarySettings,
+  salaryCalculations,
+  kpiMetrics,
+  employeeKpiTargets,
+  workSchedules,
+  employeeSchedules,
+  workTimeLogs,
+  leaveRequests,
+  type SalarySettings,
+  type NewSalarySettings,
+  type SalaryCalculation,
+  type NewSalaryCalculation,
+  type KpiMetric,
+  type NewKpiMetric,
+  type EmployeeKpiTarget,
+  type NewEmployeeKpiTarget,
+  type WorkSchedule,
+  type NewWorkSchedule,
+  type EmployeeSchedule,
+  type WorkTimeLog,
+  type NewWorkTimeLog,
+  type LeaveRequest,
+  type NewLeaveRequest,
+} from './hr';
+
+// Common (Notifications, Activity Logs, Files)
+export {
+  notifications,
+  notificationSettings,
+  activityLogs,
+  portalConfig,
+  files,
+  webhooks,
+  webhookLogs,
+  type Notification,
+  type NewNotification,
+  type NotificationSettings,
+  type ActivityLog,
+  type NewActivityLog,
+  type PortalConfig,
+  type File,
+  type NewFile,
+  type Webhook,
+  type NewWebhook,
+  type WebhookLog,
+} from './common';

@@ -110,6 +110,28 @@ importers:
         specifier: ^5.0.11
         version: 5.4.21(@types/node@20.19.31)
 
+  packages/api-client:
+    dependencies:
+      '@arzancloud/utils':
+        specifier: workspace:*
+        version: link:../utils
+    devDependencies:
+      '@types/node':
+        specifier: ^20.11.0
+        version: 20.19.31
+      '@types/react':
+        specifier: ^18.2.48
+        version: 18.3.27
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      tsup:
+        specifier: ^8.0.1
+        version: 8.5.1(postcss@8.5.6)(typescript@5.9.3)
+      typescript:
+        specifier: ^5.3.3
+        version: 5.9.3
+
   packages/auth:
     dependencies:
       '@arzancloud/database':
@@ -165,8 +187,11 @@ importers:
 
   packages/i18n:
     devDependencies:
+      tsup:
+        specifier: ^8.0.1
+        version: 8.5.1(postcss@8.5.6)(typescript@5.9.3)
       typescript:
-        specifier: ^5.0.0
+        specifier: ^5.3.3
         version: 5.9.3
 
   packages/modules:

@@ -17,7 +17,12 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "typecheck": "turbo typecheck",
     "dev:portal": "turbo dev --filter=@arzancloud/portal",
-    "build:packages": "turbo build --filter='./packages/*'"
+    "build:packages": "turbo build --filter='./packages/*'",
+    "publish:packages": "pnpm build:packages && pnpm -r --filter './packages/*' publish --no-git-checks",
+    "version:patch": "pnpm -r --filter './packages/*' exec npm version patch",
+    "version:minor": "pnpm -r --filter './packages/*' exec npm version minor",
+    "version:major": "pnpm -r --filter './packages/*' exec npm version major",
+    "prepublish:check": "pnpm build:packages && pnpm typecheck"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",

@@ -3,31 +3,42 @@
   "version": "0.1.0",
   "private": false,
   "description": "Arzan Platform - Authentication & Authorization",
+  "license": "MIT",
+  "author": "Arzan Cloud <dev@arzan.cloud>",
+  "keywords": ["arzan", "auth", "authentication", "jwt", "middleware"],
   "repository": {
     "type": "git",
-    "url": "https://github.com/arzancloud/arzancore.git"
+    "url": "https://github.com/arzancloud/arzancore.git",
+    "directory": "packages/auth"
+  },
+  "homepage": "https://github.com/arzancloud/arzancore#readme",
+  "bugs": {
+    "url": "https://github.com/arzancloud/arzancore/issues"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
   },
+  "sideEffects": false,
+  "files": ["dist", "README.md"],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.js"
     },
     "./server": {
+      "types": "./dist/server/index.d.ts",
       "import": "./dist/server/index.mjs",
-      "require": "./dist/server/index.js",
-      "types": "./dist/server/index.d.ts"
+      "require": "./dist/server/index.js"
     },
     "./client": {
+      "types": "./dist/client/index.d.ts",
       "import": "./dist/client/index.mjs",
-      "require": "./dist/client/index.js",
-      "types": "./dist/client/index.d.ts"
+      "require": "./dist/client/index.js"
     }
   },
   "scripts": {
