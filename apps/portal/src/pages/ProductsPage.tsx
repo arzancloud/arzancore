@@ -53,7 +53,7 @@ export default function ProductsPage() {
                         {product.icon}
                       </div>
                       <div className={`${colors.text} text-sm font-semibold`}>
-                        {product.price}
+                        от ${product.startingPrice}
                       </div>
                     </div>
 

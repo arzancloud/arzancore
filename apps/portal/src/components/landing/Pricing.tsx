@@ -197,7 +197,6 @@ export default function Pricing() {
                 {selectedProducts.map((productId) => {
                   const product = PRODUCTS.find((p) => p.id === productId);
                   if (!product) return null;
-                  const colors = colorClasses[product.color] || colorClasses.blue;
                   return (
                     <div
                       key={productId}

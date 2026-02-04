@@ -1,7 +1,7 @@
 import { Puzzle, Zap, Shield, Globe, Headphones, Link } from 'lucide-react';
 import { FEATURES } from '../../lib/constants';
 
-const iconMap: Record<string, React.FC<{ size?: number; className?: string }>> = {
+const iconMap: Record<string, React.FC<{ size?: string | number; className?: string }>> = {
   Puzzle,
   Zap,
   Shield,

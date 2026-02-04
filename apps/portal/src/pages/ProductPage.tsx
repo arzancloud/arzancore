@@ -4,7 +4,7 @@ import Footer from '../components/layout/Footer';
 import { useProduct, useProducts } from '../hooks/useProducts';
 import {
   Check, ArrowLeft, ArrowRight, Phone, Play, Star,
-  Zap, Shield, Clock, Users, ChevronRight, ExternalLink,
+  Zap, Users, ChevronRight, ExternalLink,
   Sparkles
 } from 'lucide-react';
 import { CONTACTS } from '../lib/constants';
@@ -451,7 +451,7 @@ export default function ProductPage() {
             {/* Pricing cards */}
             {product.pricing && (
               <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-                {product.pricing.map((plan, i) => (
+                {product.pricing.map((plan) => (
                   <div
                     key={plan.name}
                     className={`relative rounded-3xl p-6 lg:p-8 transition-all duration-300 ${
